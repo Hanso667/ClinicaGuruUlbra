@@ -6,6 +6,7 @@
 package br.ulbra.view;
 
 import java.util.Calendar;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,10 +38,10 @@ public class frProjetoFinal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        resNome = new javax.swing.JLabel();
+        txtSigno = new javax.swing.JLabel();
+        txtTrueIdade = new javax.swing.JLabel();
+        txtSorte = new javax.swing.JLabel();
         resSigno = new javax.swing.JLabel();
         resIdade = new javax.swing.JLabel();
         resSorte = new javax.swing.JLabel();
@@ -59,9 +60,9 @@ public class frProjetoFinal extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbFeminino = new javax.swing.JRadioButton();
         jPanel15 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        rbmasculino = new javax.swing.JRadioButton();
         btnLimpar = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
 
@@ -111,38 +112,27 @@ public class frProjetoFinal extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 7, true));
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Sr AAAAAAAAAAAAAA");
+        resNome.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        resNome.setForeground(new java.awt.Color(0, 0, 0));
+        resNome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("O seu signo é: ");
+        txtSigno.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        txtSigno.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("A sua Idade é: ");
+        txtTrueIdade.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        txtTrueIdade.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("O seu numero da Sorte é: ");
+        txtSorte.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        txtSorte.setForeground(new java.awt.Color(0, 0, 0));
 
         resSigno.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         resSigno.setForeground(new java.awt.Color(0, 0, 0));
-        resSigno.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        resSigno.setText("Cancer");
 
         resIdade.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         resIdade.setForeground(new java.awt.Color(0, 0, 0));
-        resIdade.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        resIdade.setText("124 anos 12 meses e 30 dias");
 
         resSorte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         resSorte.setForeground(new java.awt.Color(0, 0, 0));
-        resSorte.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        resSorte.setText("30");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -153,41 +143,38 @@ public class frProjetoFinal extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(resNome, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(txtTrueIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(resIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(resSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(resSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(txtSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resSorte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtSigno, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(resSigno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(resNome, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(resSigno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                    .addComponent(txtSigno, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(resSigno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTrueIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(resIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtSorte, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(resSorte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -405,10 +392,10 @@ public class frProjetoFinal extends javax.swing.JFrame {
         jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
         jPanel14.setPreferredSize(new java.awt.Dimension(422, 40));
 
-        btngSexo.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 0));
-        jRadioButton2.setText("FEMININO");
+        btngSexo.add(rbFeminino);
+        rbFeminino.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        rbFeminino.setForeground(new java.awt.Color(255, 255, 0));
+        rbFeminino.setText("FEMININO");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -416,14 +403,14 @@ public class frProjetoFinal extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(rbFeminino, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rbFeminino, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -431,10 +418,10 @@ public class frProjetoFinal extends javax.swing.JFrame {
         jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 6));
         jPanel15.setPreferredSize(new java.awt.Dimension(422, 40));
 
-        btngSexo.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 0));
-        jRadioButton1.setText("MASCULINO");
+        btngSexo.add(rbmasculino);
+        rbmasculino.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        rbmasculino.setForeground(new java.awt.Color(255, 255, 0));
+        rbmasculino.setText("MASCULINO");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -442,13 +429,13 @@ public class frProjetoFinal extends javax.swing.JFrame {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
+                .addComponent(rbmasculino, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rbmasculino, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -575,81 +562,112 @@ public class frProjetoFinal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int diaA) {
-        return ((anoA * 365 + mesA * 12 + diaA) - (ano * 365 + mes * 12 + dia));
+        return ((anoA*365+mesA*12+diaA)-(ano*365+mes*12+dia));
     }
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         Calendar hoje = Calendar.getInstance();
+        String trueNome = txtNome.getText();
         String nome = txtNome.getText();
         nome = nome.replace(" ", "");
         int ano = Integer.parseInt(txtAno.getText());
         int mes = Integer.parseInt(txtMes.getText());
         int dia = Integer.parseInt(txtDia.getText());
         int anoA = hoje.get(Calendar.YEAR);
-        int mesA = hoje.get(Calendar.MONTH);
+        int mesA = hoje.get(Calendar.MONTH)+1;
         int diaA = hoje.get(Calendar.DATE);
+        String tratamento = "";
         if (ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) {
-            JOptionPane.showMessageDialog(this, "Valor de data Invalido.");
-        }
-        if (nome.length() < 8) {
-            JOptionPane.showMessageDialog(this, "Nome Invalido.");
-        }
-        if (!(ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) && nome.length() > 8) {
-            int idade = getFullAge(ano, mes, dia, anoA, mesA, diaA);
-            int anoC = idade / 365;
-            int mesC = idade % 365 / 12;
-            int diaC = idade % 365 % 12;
-            if (anoC > 1 && mesC > 1 && diaC > 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " anos, " + mesC + " meses e " + diaC + " Dias");
-            } else if (anoC > 1 && mesC > 1 && diaC == 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " anos, " + mesC + " meses e " + diaC + " Dia");
-            } else if (anoC > 1 && mesC == 1 && diaC == 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " anos, " + mesC + " mes e " + diaC + " Dia");
-            } else if (anoC > 1 && mesC == 1 && diaC > 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " anos, " + mesC + " mes e " + diaC + " Dias");
-            } else if (anoC == 1 && mesC == 1 && diaC == 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
-            } else if (anoC == 1 && mesC > 1 && diaC > 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " ano, " + mesC + " meses e " + diaC + " Dias");
-            } else if (anoC == 1 && mesC > 1 && diaC == 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " ano, " + mesC + " meses e " + diaC + " Dia");
-            } else if (anoC == 1 && mesC == 1 && diaC == 1) {
-                JOptionPane.showMessageDialog(this, "a sua idade verdadeira é de: " + anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+            JOptionPane.showMessageDialog(this, "data Invalida.");
+        } else {
+            if (nome.length() < 8) {
+                JOptionPane.showMessageDialog(this, "Nome Invalido.");
+            } else {
+                if (rbFeminino.isSelected()) {
+                    tratamento = "sra.";
+                    resNome.setText(tratamento + " " + trueNome);
+                } else if (rbmasculino.isSelected()) {
+                    tratamento = "sr.";
+                    resNome.setText(tratamento + " " + trueNome);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Selecione um sexo.");
+                }
             }
-
-            if (dia > 21 && dia < 31 && mes == 3 || dia > 1 && dia < 20 && mes == 3) {
-                JOptionPane.showMessageDialog(this, "Aries");
-            } else if (dia > 21 && dia < 31 && mes == 4 || dia > 1 && dia < 20 && mes == 5) {
-                JOptionPane.showMessageDialog(this, "Touro");
-            } else if (dia > 21 && dia < 31 && mes == 5 || dia > 1 && dia < 20 && mes == 6) {
-                JOptionPane.showMessageDialog(this, "Gemeos");
-            } else if (dia > 21 && dia < 31 && mes == 6 || dia > 1 && dia < 21 && mes == 7) {
-                JOptionPane.showMessageDialog(this, "Cancer");
-            } else if (dia > 22 && dia < 31 && mes == 7 || dia > 1 && dia < 22 && mes == 8) {
-                JOptionPane.showMessageDialog(this, "Leão");
-            } else if (dia > 23 && dia < 31 && mes == 8 || dia > 1 && dia < 22 && mes == 9) {
-                JOptionPane.showMessageDialog(this, "Virgem");
-            }else if (dia > 23 && dia < 31 && mes == 9 || dia > 1 && dia < 22 && mes == 10) {
-                JOptionPane.showMessageDialog(this, "Libra");
-            }else if (dia > 23 && dia < 31 && mes == 10 || dia > 1 && dia < 21 && mes == 11) {
-                JOptionPane.showMessageDialog(this, "Escorpião");
-            }else if (dia > 22 && dia < 31 && mes == 11 || dia > 1 && dia < 21 && mes == 12) {
-                JOptionPane.showMessageDialog(this, "Sagitario");
-            }else if (dia > 22 && dia < 31 && mes == 12 || dia > 1 && dia < 20 && mes == 1) {
-                JOptionPane.showMessageDialog(this, "Capricornio");
-            }else if (dia > 21 && dia < 31 && mes == 1 || dia > 1 && dia < 19 && mes == 2) {
-                JOptionPane.showMessageDialog(this, "Aquario");
-            }else if (dia > 20 && dia < 31 && mes == 2 || dia > 1 && dia < 20 && mes == 3) {
-                JOptionPane.showMessageDialog(this, "Peixes");
+            if (!(ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) && nome.length() > 8) {
+                txtTrueIdade.setText("A sua Idade é:");
+                int idade = getFullAge(ano, mes, dia, anoA, mesA, diaA);
+                int anoC = idade / 365;
+                int mesC = idade % 365 / 30;
+                int diaC = idade % 365 % 30;
+                if (anoC > 1 && mesC > 1 && diaC > 1) {
+                    resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dias");
+                } else if (anoC > 1 && mesC > 1 && diaC == 1) {
+                    resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dia");
+                } else if (anoC > 1 && mesC == 1 && diaC == 1) {
+                    resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dia");
+                } else if (anoC > 1 && mesC == 1 && diaC > 1) {
+                    resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dias");
+                } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                    resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                } else if (anoC == 1 && mesC > 1 && diaC > 1) {
+                    resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dias");
+                } else if (anoC == 1 && mesC > 1 && diaC == 1) {
+                    resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dia");
+                } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                    resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                }
+                String[] Signo = {"Aries", "Touro", "gemeos", "Cancer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitario", "Capricornio", "Aquario", "Peixes"};
+                txtSigno.setText("O seu signo é:");
+                if (dia > 21 && dia < 31 && mes == 3 || dia > 1 && dia < 20 && mes == 3) {
+                    resSigno.setText(Signo[0]);
+                } else if (dia > 21 && dia < 31 && mes == 4 || dia > 1 && dia < 20 && mes == 5) {
+                    resSigno.setText(Signo[1]);
+                } else if (dia > 21 && dia < 31 && mes == 5 || dia > 1 && dia < 20 && mes == 6) {
+                    resSigno.setText(Signo[2]);
+                } else if (dia > 21 && dia < 31 && mes == 6 || dia > 1 && dia < 21 && mes == 7) {
+                    resSigno.setText(Signo[3]);
+                } else if (dia > 22 && dia < 31 && mes == 7 || dia > 1 && dia < 22 && mes == 8) {
+                    resSigno.setText(Signo[4]);
+                } else if (dia > 23 && dia < 31 && mes == 8 || dia > 1 && dia < 22 && mes == 9) {
+                    resSigno.setText(Signo[5]);
+                } else if (dia > 23 && dia < 31 && mes == 9 || dia > 1 && dia < 22 && mes == 10) {
+                    resSigno.setText(Signo[6]);
+                } else if (dia > 23 && dia < 31 && mes == 10 || dia > 1 && dia < 21 && mes == 11) {
+                    resSigno.setText(Signo[7]);
+                } else if (dia > 22 && dia < 31 && mes == 11 || dia > 1 && dia < 21 && mes == 12) {
+                    resSigno.setText(Signo[8]);
+                } else if (dia > 22 && dia < 31 && mes == 12 || dia > 1 && dia < 20 && mes == 1) {
+                    resSigno.setText(Signo[9]);
+                } else if (dia > 21 && dia < 31 && mes == 1 || dia > 1 && dia < 19 && mes == 2) {
+                    resSigno.setText(Signo[10]);
+                } else if (dia > 20 && dia < 31 && mes == 2 || dia > 1 && dia < 20 && mes == 3) {
+                    resSigno.setText(Signo[11]);
+                }
+                txtSorte.setText("O seu numero da Sorte é:");
+                int sorte = sumInt(dia) + sumInt(mes) + sumInt(ano);
+                resSorte.setText(String.valueOf(sorte));
             }
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
-
+    public static int sumInt(int num) {
+        int sum;
+        for (sum = 0; num != 0; num = num / 10) {
+            sum += num % 10;
+        }
+        return sum;
+    }
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         txtAno.setText("");
         txtDia.setText("");
         txtMes.setText("");
         txtNome.setText("");
+        txtSigno.setText("");
+        txtSorte.setText("");
+        txtTrueIdade.setText("");
+        resIdade.setText("");
+        resNome.setText("");
+        resSigno.setText("");
+        resSorte.setText("");
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void txtDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaActionPerformed
@@ -738,10 +756,6 @@ private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -757,14 +771,18 @@ private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton rbFeminino;
+    private javax.swing.JRadioButton rbmasculino;
     private javax.swing.JLabel resIdade;
+    private javax.swing.JLabel resNome;
     private javax.swing.JLabel resSigno;
     private javax.swing.JLabel resSorte;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtDia;
     private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JLabel txtSigno;
+    private javax.swing.JLabel txtSorte;
+    private javax.swing.JLabel txtTrueIdade;
     // End of variables declaration//GEN-END:variables
 }
