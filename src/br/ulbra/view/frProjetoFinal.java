@@ -562,7 +562,7 @@ public class frProjetoFinal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int diaA) {
-        return ((anoA*365+mesA*12+diaA)-(ano*365+mes*12+dia));
+        return ((anoA * 365 + mesA * 12 + diaA) - (ano * 365 + mes * 12 + dia));
     }
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
@@ -574,7 +574,7 @@ private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int
         int mes = Integer.parseInt(txtMes.getText());
         int dia = Integer.parseInt(txtDia.getText());
         int anoA = hoje.get(Calendar.YEAR);
-        int mesA = hoje.get(Calendar.MONTH)+1;
+        int mesA = hoje.get(Calendar.MONTH) + 1;
         int diaA = hoje.get(Calendar.DATE);
         String tratamento = "";
         if (ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) {
@@ -586,66 +586,120 @@ private static int getFullAge(int ano, int mes, int dia, int anoA, int mesA, int
                 if (rbFeminino.isSelected()) {
                     tratamento = "sra.";
                     resNome.setText(tratamento + " " + trueNome);
+                    if (!(ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) && nome.length() > 8) {
+                        txtTrueIdade.setText("A sua Idade é:");
+                        int idade = getFullAge(ano, mes, dia, anoA, mesA, diaA);
+                        int anoC = idade / 365;
+                        int mesC = idade % 365 / 30;
+                        int diaC = idade % 365 % 30;
+                        if (anoC > 1 && mesC > 1 && diaC > 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dias");
+                        } else if (anoC > 1 && mesC > 1 && diaC == 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dia");
+                        } else if (anoC > 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dia");
+                        } else if (anoC > 1 && mesC == 1 && diaC > 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dias");
+                        } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                        } else if (anoC == 1 && mesC > 1 && diaC > 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dias");
+                        } else if (anoC == 1 && mesC > 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dia");
+                        } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                        }
+                        String[] Signo = {"Aries", "Touro", "gemeos", "Cancer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitario", "Capricornio", "Aquario", "Peixes"};
+                        txtSigno.setText("O seu signo é:");
+                        if (dia >= 21 && dia <= 31 && mes == 3 || dia >= 1 && dia <= 20 && mes == 3) {
+                            resSigno.setText(Signo[0]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 4 || dia >= 1 && dia <= 20 && mes == 5) {
+                            resSigno.setText(Signo[1]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 5 || dia >= 1 && dia <= 20 && mes == 6) {
+                            resSigno.setText(Signo[2]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 6 || dia >= 1 && dia <= 21 && mes == 7) {
+                            resSigno.setText(Signo[3]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 7 || dia >= 1 && dia <= 22 && mes == 8) {
+                            resSigno.setText(Signo[4]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 8 || dia >= 1 && dia <= 22 && mes == 9) {
+                            resSigno.setText(Signo[5]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 9 || dia >= 1 && dia <= 22 && mes == 10) {
+                            resSigno.setText(Signo[6]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 10 || dia >= 1 && dia <= 21 && mes == 11) {
+                            resSigno.setText(Signo[7]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 11 || dia >= 1 && dia <= 21 && mes == 12) {
+                            resSigno.setText(Signo[8]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 12 || dia >= 1 && dia <= 20 && mes == 1) {
+                            resSigno.setText(Signo[9]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 1 || dia >= 1 && dia <= 19 && mes == 2) {
+                            resSigno.setText(Signo[10]);
+                        } else if (dia >= 20 && dia <= 31 && mes == 2 || dia >= 1 && dia <= 20 && mes == 3) {
+                            resSigno.setText(Signo[11]);
+                        }
+                        txtSorte.setText("O seu numero da Sorte é:");
+                        int sorte = sumInt(dia) + sumInt(mes) + sumInt(ano);
+                        resSorte.setText(String.valueOf(sorte));
+                    }
                 } else if (rbmasculino.isSelected()) {
                     tratamento = "sr.";
                     resNome.setText(tratamento + " " + trueNome);
+                    if (!(ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) && nome.length() > 8) {
+                        txtTrueIdade.setText("A sua Idade é:");
+                        int idade = getFullAge(ano, mes, dia, anoA, mesA, diaA);
+                        int anoC = idade / 365;
+                        int mesC = idade % 365 / 30;
+                        int diaC = idade % 365 % 30;
+                        if (anoC > 1 && mesC > 1 && diaC > 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dias");
+                        } else if (anoC > 1 && mesC > 1 && diaC == 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dia");
+                        } else if (anoC > 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dia");
+                        } else if (anoC > 1 && mesC == 1 && diaC > 1) {
+                            resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dias");
+                        } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                        } else if (anoC == 1 && mesC > 1 && diaC > 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dias");
+                        } else if (anoC == 1 && mesC > 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dia");
+                        } else if (anoC == 1 && mesC == 1 && diaC == 1) {
+                            resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
+                        }
+                        String[] Signo = {"Aries", "Touro", "gemeos", "Cancer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitario", "Capricornio", "Aquario", "Peixes"};
+                        txtSigno.setText("O seu signo é:");
+                        if (dia >= 21 && dia <= 31 && mes == 3 || dia >= 1 && dia <= 20 && mes == 3) {
+                            resSigno.setText(Signo[0]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 4 || dia >= 1 && dia <= 20 && mes == 5) {
+                            resSigno.setText(Signo[1]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 5 || dia >= 1 && dia <= 20 && mes == 6) {
+                            resSigno.setText(Signo[2]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 6 || dia >= 1 && dia <= 21 && mes == 7) {
+                            resSigno.setText(Signo[3]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 7 || dia >= 1 && dia <= 22 && mes == 8) {
+                            resSigno.setText(Signo[4]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 8 || dia >= 1 && dia <= 22 && mes == 9) {
+                            resSigno.setText(Signo[5]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 9 || dia >= 1 && dia <= 22 && mes == 10) {
+                            resSigno.setText(Signo[6]);
+                        } else if (dia >= 23 && dia <= 31 && mes == 10 || dia >= 1 && dia <= 21 && mes == 11) {
+                            resSigno.setText(Signo[7]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 11 || dia >= 1 && dia <= 21 && mes == 12) {
+                            resSigno.setText(Signo[8]);
+                        } else if (dia >= 22 && dia <= 31 && mes == 12 || dia >= 1 && dia <= 20 && mes == 1) {
+                            resSigno.setText(Signo[9]);
+                        } else if (dia >= 21 && dia <= 31 && mes == 1 || dia >= 1 && dia <= 19 && mes == 2) {
+                            resSigno.setText(Signo[10]);
+                        } else if (dia >= 20 && dia <= 31 && mes == 2 || dia >= 1 && dia <= 20 && mes == 3) {
+                            resSigno.setText(Signo[11]);
+                        }
+                        txtSorte.setText("O seu numero da Sorte é:");
+                        int sorte = sumInt(dia) + sumInt(mes) + sumInt(ano);
+                        resSorte.setText(String.valueOf(sorte));
+                    }
                 } else {
                     JOptionPane.showMessageDialog(this, "Selecione um sexo.");
                 }
-            }
-            if (!(ano < 1900 || ano > anoA || dia < 1 || dia > 31 || mes < 1 || mes > 31) && nome.length() > 8) {
-                txtTrueIdade.setText("A sua Idade é:");
-                int idade = getFullAge(ano, mes, dia, anoA, mesA, diaA);
-                int anoC = idade / 365;
-                int mesC = idade % 365 / 30;
-                int diaC = idade % 365 % 30;
-                if (anoC > 1 && mesC > 1 && diaC > 1) {
-                    resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dias");
-                } else if (anoC > 1 && mesC > 1 && diaC == 1) {
-                    resIdade.setText(anoC + " anos, " + mesC + " meses e " + diaC + " Dia");
-                } else if (anoC > 1 && mesC == 1 && diaC == 1) {
-                    resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dia");
-                } else if (anoC > 1 && mesC == 1 && diaC > 1) {
-                    resIdade.setText(anoC + " anos, " + mesC + " mes e " + diaC + " Dias");
-                } else if (anoC == 1 && mesC == 1 && diaC == 1) {
-                    resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
-                } else if (anoC == 1 && mesC > 1 && diaC > 1) {
-                    resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dias");
-                } else if (anoC == 1 && mesC > 1 && diaC == 1) {
-                    resIdade.setText(anoC + " ano, " + mesC + " meses e " + diaC + " Dia");
-                } else if (anoC == 1 && mesC == 1 && diaC == 1) {
-                    resIdade.setText(anoC + " ano, " + mesC + " mes e " + diaC + " Dia");
-                }
-                String[] Signo = {"Aries", "Touro", "gemeos", "Cancer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitario", "Capricornio", "Aquario", "Peixes"};
-                txtSigno.setText("O seu signo é:");
-                if (dia > 21 && dia < 31 && mes == 3 || dia > 1 && dia < 20 && mes == 3) {
-                    resSigno.setText(Signo[0]);
-                } else if (dia > 21 && dia < 31 && mes == 4 || dia > 1 && dia < 20 && mes == 5) {
-                    resSigno.setText(Signo[1]);
-                } else if (dia > 21 && dia < 31 && mes == 5 || dia > 1 && dia < 20 && mes == 6) {
-                    resSigno.setText(Signo[2]);
-                } else if (dia > 21 && dia < 31 && mes == 6 || dia > 1 && dia < 21 && mes == 7) {
-                    resSigno.setText(Signo[3]);
-                } else if (dia > 22 && dia < 31 && mes == 7 || dia > 1 && dia < 22 && mes == 8) {
-                    resSigno.setText(Signo[4]);
-                } else if (dia > 23 && dia < 31 && mes == 8 || dia > 1 && dia < 22 && mes == 9) {
-                    resSigno.setText(Signo[5]);
-                } else if (dia > 23 && dia < 31 && mes == 9 || dia > 1 && dia < 22 && mes == 10) {
-                    resSigno.setText(Signo[6]);
-                } else if (dia > 23 && dia < 31 && mes == 10 || dia > 1 && dia < 21 && mes == 11) {
-                    resSigno.setText(Signo[7]);
-                } else if (dia > 22 && dia < 31 && mes == 11 || dia > 1 && dia < 21 && mes == 12) {
-                    resSigno.setText(Signo[8]);
-                } else if (dia > 22 && dia < 31 && mes == 12 || dia > 1 && dia < 20 && mes == 1) {
-                    resSigno.setText(Signo[9]);
-                } else if (dia > 21 && dia < 31 && mes == 1 || dia > 1 && dia < 19 && mes == 2) {
-                    resSigno.setText(Signo[10]);
-                } else if (dia > 20 && dia < 31 && mes == 2 || dia > 1 && dia < 20 && mes == 3) {
-                    resSigno.setText(Signo[11]);
-                }
-                txtSorte.setText("O seu numero da Sorte é:");
-                int sorte = sumInt(dia) + sumInt(mes) + sumInt(ano);
-                resSorte.setText(String.valueOf(sorte));
             }
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
